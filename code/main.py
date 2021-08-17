@@ -5,11 +5,16 @@ html_text=requests.get('https://www.mutualfundindia.com/MF/return/TopFunds?id=3'
 soup = BeautifulSoup(html_text,'lxml')
 
 #Category of the fund
-#aum
+
 aum = soup.find_all('td',style = "text-align:right; padding-right:30px;")
 for i in aum:
     j = i.find_previous_sibling("td")
     print(j.text.replace(' ',''))
+#aum
+
+aum = soup.find_all('td',style = "text-align:right; padding-right:30px;")
+for i in aum:
+    print(i.text.replace(' ',''))
 
 
 #Name of the fund
